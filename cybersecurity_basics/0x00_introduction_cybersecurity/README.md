@@ -25,3 +25,15 @@
    tr limits the random output to alphanumerical characters -c complement -d delete
    head -c limits the number of characters to $1 that is that parameter that we pass when executing the bash.
    the ; limit the command and allow to introduce a secon command as echo in the line.
+
+
+2-sha256_validator.sh
+
+## DESCRIPTION
+  File integrity verification is a fundamental cybersecurity concept used to detect unauthorized changes to files  by comparing cryptographic hash values. 
+
+## USE
+  Bash command
+  You need to create an empty file test_file and uses command sha256 to get the hash of the file.
+  As you can see in the exercise sample you are passing two parameters $1 contains the name of the file that you   want to compare and $2 the hash that you own to ensure that the file wasn't modified. Then you use if to         compare the files. You extract the hash only using cut -d. Important here is the correct use of the $ to split   the process and the spaces to avoid failure of the if command. 
+  if [ "$(sha256sum "$1" | cut -d' ' -f1)" = "$2" ]; then echo "$1: OK"; fi
