@@ -5,8 +5,5 @@
   Your Script Should Have one Line and New Line Only
 
 ## USE
-   Bash commnad 
-   lsb_release -i Option for receive the Distribution ID
-   cut -d':' - f2  Split the output delimitin by character : and selecting the second section 
-   tr -d ' ' translate delete -d specified character
-    
+   ash commnad 
+   lsb_release -i -s Option for receive the Distribution ID shortened    
