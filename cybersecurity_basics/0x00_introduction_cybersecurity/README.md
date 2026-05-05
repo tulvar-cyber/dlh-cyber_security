@@ -21,7 +21,7 @@
 
 ## USE 
    Bash command 
-   tr -dc [:alnum:] < /dev/urandom | head -c $1  
+   tr -dc [:alnum:] < /dev/urandom | head -c $1 ; echo 
    tr limits the random output to alphanumerical characters -c complement -d delete
    head -c limits the number of characters to $1 that is that parameter that we pass when executing the bash.
-   echo  prints in screen the result
+   the ; limit the command and allow to introduce a secon command as echo in the line.
