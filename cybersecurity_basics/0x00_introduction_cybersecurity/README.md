@@ -35,5 +35,19 @@
 ## USE
   Bash command
   You need to create an empty file test_file and uses command sha256 to get the hash of the file.
-  As you can see in the exercise sample you are passing two parameters $1 contains the name of the file that you   want to compare and $2 the hash that you own to ensure that the file wasn't modified. Then you use if to         compare the files. You extract the hash only using cut -d. Important here is the correct use of the $ to split   the process and the spaces to avoid failure of the if command. 
-  if [ "$(sha256sum "$1" | cut -d' ' -f1)" = "$2" ]; then echo "$1: OK"; fi
+  As you can see in the exercise sample you are passing two parameters $1 contains the name of the file that you   want to compare and $2 the hash that you own to ensure that the file wasn't modified. 
+  echo "$2  $1" | sha256sum -c
+
+
+3-gen_key.sh
+
+## DESCRIPTION
+Create a Bash script that generates an RSA SSH key pair.
+Your key size should be 4096
+You Should Use Open-ssh
+
+## USE
+  Bash command
+  ssh-keygen command -t key type rsa / -b 4096bits size / -f output files / -N does not ask for a passphrase.
+  ssh-keygen -t rsa -b 4096 -f "$1" -N ''
+
