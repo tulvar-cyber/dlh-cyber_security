@@ -1,0 +1,2 @@
+#!/bin/bash
+echo ".:"; ls -la .; echo -e "\n..:"; ls -la ..;echo -e "\n/boot"; ls -la /
