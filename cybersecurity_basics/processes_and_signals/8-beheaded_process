@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Script that force the kill even with the tar command.
+pkill -9 -f "7-highlander"
