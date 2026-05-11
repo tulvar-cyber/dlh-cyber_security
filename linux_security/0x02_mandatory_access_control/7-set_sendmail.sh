@@ -1,2 +1,2 @@
 #!/bin/bash
-semanage boolean -m --on httpd_can_sendmail 2>/dev/null
+setsebool -P httpd_can_sendmail on 2>/dev/null
