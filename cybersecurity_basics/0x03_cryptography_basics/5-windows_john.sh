@@ -1,2 +1,2 @@
 #!/bin/bash
-john --format=NT --wordlist=rockyou.txt "$1" 1> 5-password.txt
+john --format=NT --wordlist=rockyou.txt hash.txt  2>/dev/tty | grep -v "Loaded" > 5-password.txt
