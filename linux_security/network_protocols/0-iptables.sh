@@ -1,2 +1,2 @@
 #!/bin/bash
-iptables -L "DOCKER-USER"  -nv --line-numbers  
+iptables -L "DOCKER-USER"  -n -v --line-numbers  
