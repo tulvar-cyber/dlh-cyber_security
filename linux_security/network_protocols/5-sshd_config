@@ -1,0 +1,7 @@
+Protocol 2
+Port 22
+PermitRootLogin prohibit-password
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitEmptyPasswords no
+X11Forwarding no
