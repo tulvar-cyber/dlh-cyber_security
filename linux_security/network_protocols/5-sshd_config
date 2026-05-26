@@ -1,6 +1,6 @@
 Protocol 2
 Port 22
-PermitRootLogin prohibit-password
+PermitRootLogin no 
 PubkeyAuthentication yes
 PasswordAuthentication no
 PermitEmptyPasswords no
