@@ -1,0 +1,2 @@
+#!/bin/bash
+malicious-site.com:192.0.2.100
