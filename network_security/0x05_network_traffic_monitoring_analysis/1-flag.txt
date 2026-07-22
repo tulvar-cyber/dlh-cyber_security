@@ -1,2 +1,1 @@
-#!/bin/bash
-admin:SecurePass123!
+37595443f74e52535c3514590d4e7e9d
