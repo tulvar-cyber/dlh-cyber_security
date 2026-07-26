@@ -8,7 +8,7 @@ HASH="$1"
 ## Delete the prefix {xor}
 BASE64="${HASH#\{xor\}}"
 
-echo "$BASE64" | base64 -d 2>/dev/null | while IFS= read -r -n1 char; 
+echo "$BASE64" | base64 -d 2>/dev/null | while IFS= read -r -n1 char 
 do
     # Get ASCII 
     ascii=$(printf "%d" "'$char")
