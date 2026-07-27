@@ -1,19 +1,29 @@
 #!/bin/bash
-##  Create a Bash script that decode XOR WebSphere
+# XOR Decoder for WebSphere Hashes
+# Usage: ./1-xor_decoder.sh "{xor}KzosKw=="
+# Output: test
 
-## Argument
-HASH="$1"
+# El argumento $1 es el hash completo con el prefijo {xor}
+# Se pasa a Python para su procesamiento
+python3 -c "
+from base64 import b64decode
 
-## Delete the prefix {xor}
-BASE64="${HASH#\{xor\}}"
+# Recibir el hash como argumento
+hash_input = '$1'
 
-echo "$BASE64" | base64 -d 2>/dev/null | while IFS= read -r -n1 char
-do
-    # Get ASCII
-    ascii=$(printf "%d" "'$char")
-    # Apply XOR '_'
-    xor=$((ascii ^ 95))
-    # Convert result and print
-    printf "\\$(printf '%03o' $xor)"
-done
-echo
+# Eliminar el prefijo '{xor}' del hash
+hash_clean = hash_input.replace('{xor}', '')
+
+# Decodificar de Base64 a bytes
+decoded_bytes = b64decode(hash_clean)
+
+# Aplicar XOR con 0x5f ('_') a cada byte
+# La clave '_' es 95 en decimal o 0x5f en hexadecimal
+xor_bytes = bytes(byte ^ 0x5f for byte in decoded_bytes)
+
+# Convertir los bytes a texto UTF-8
+result = xor_bytes.decode('utf-8')
+
+# Imprimir el resultado
+print(result)
+"
